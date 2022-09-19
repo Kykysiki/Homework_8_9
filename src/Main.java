@@ -17,7 +17,7 @@ public class Main {
             System.out.print(box[index] + ", ");
         }
         double[] dimensions = {1.57, 7.654, 9.986}; // 2 массив
-        for (int index = 0; index < box.length; index++) {
+        for (int index = 0; index < dimensions.length; index++) {
             if (index == dimensions.length - 1) {
                 System.out.println(dimensions[index]);
                 break;
@@ -73,11 +73,11 @@ public class Main {
             if (arr[index] % 2 != 0) { // Если остаток от деления не равен 0 - добавляем 1 к значению
                 arr[index]++;
             }
-            if (index == arr.length - 1){
+            if (index == arr.length - 1) {
                 System.out.println(arr[index]);
                 break;
             }
-            System.out.print(arr[index]+", ");
+            System.out.print(arr[index] + ", ");
         }
     }
 }
