@@ -1,12 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        generateRandomArray();
-        generateRandomArray2();
-        generateRandomArray3();
+        task1();
+        task2();
+        task3();
         task4();
     }
-
-    int[] arr = generateRandomArray();
 
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
@@ -14,6 +12,11 @@ public class Main {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100_000) + 100_000;
         }
+        return arr;
+    }
+
+    public static int[] task1() {
+        int[] arr = generateRandomArray();
         int sum = 0;
         for (int element : arr) {
             sum += element;
@@ -24,31 +27,25 @@ public class Main {
     }
 
 
-    public static int[] generateRandomArray2() {
-        java.util.Random random = new java.util.Random();
+    public static int[] task2() {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
-        int[] arr = new int[30];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100_000) + 100_000;
-            if (min > arr[i]) {
-                min = arr[i];
+        int[] arr = generateRandomArray();
+        for (int arr2 : arr) {
+            if (min > arr2) {
+                min = arr2;
             }
-            if (max < arr[i]) {
-                max = arr[i];
+            if (max < arr2) {
+                max = arr2;
             }
         }
         System.out.println("Задание 2:");
-        System.out.println("Минимальная сумма трат за день составила " + min + " рублей. Максимальная сумма трат за день составила " + max + " рублей ");
+        System.out.println("Минимальная сумма трат за день составила "+min +" рублей. Максимальная сумма трат за день составила "+max +" рублей ");
         return arr;
-    }
+}
 
-    public static int[] generateRandomArray3() {
-        java.util.Random random = new java.util.Random();
-        int[] arr = new int[30];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100_000) + 100_000;
-        }
+    public static int[] task3() {
+        int[] arr = generateRandomArray();
         double sum = 0;
         for (int element : arr) {
             sum += (double) element / arr.length;
